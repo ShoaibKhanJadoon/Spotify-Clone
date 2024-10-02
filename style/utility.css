@@ -16,3 +16,24 @@
 .invert{
     filter: invert(1);
 }
+/* Dark theme custom scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #000000; /* Darker background for the track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    opacity: 0;
+    background-color: #888; /* Dark gray for the scrollbar thumb */
+    /* border-radius: 10px; Rounded corners for the thumb */
+    /* border: 3px solid #2c2c2c; Match the background to create some padding around the thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    opacity: 1;
+    background-color: #888; /* Lighter gray on hover */
+  }
+  

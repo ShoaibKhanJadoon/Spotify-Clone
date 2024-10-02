@@ -19,7 +19,9 @@ input[type="search"] {
 input[type="search"]:focus {
     outline: none; /* Remove default outline but keep the blinking cursor */
 }
-
+.header{
+    height: 3.90rem;
+}
 .header ul li {
     list-style: none;
 }
@@ -31,14 +33,31 @@ input[type="search"]:focus {
     justify-content: space-between;
     
 }
+.backgroundleftright{
+    background-color: black;
+    height: calc(100vh - 5rem);
+        
+}
 
 .left {
+    height: calc(100vh - 10rem);
     width: 25vw;
     margin-left: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    flex-direction: column;
+    
 }
 
 .right {
+    height: calc(100vh - 10rem);
+
     width: 75vw;
+    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+   
+    overflow-y: scroll;
 
 }
 .logohome{
@@ -136,7 +155,7 @@ input[type="search"]:focus {
     padding: 0.5rem;
     box-sizing: border-box;
     font-size: 1.2rem;
-
+    width: 100%;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -262,4 +281,77 @@ input[type="search"]:focus {
     min-width: 7.78rem;
     min-height: 3.125rem;
 
+}
+
+/* spotifyplaylist */
+
+header {
+    padding-left: 1.5rem;
+}
+
+.spotifyPlaylist {
+    background-color: black;
+}
+
+.spotifyPlaylistContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.playlistcard {
+    width: 11rem;
+    height: 16.8rem;
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.playlistcard:hover button {
+    bottom: 7.2rem; 
+    opacity: 1;
+}
+
+.playlistcard img {
+    border-radius: 0.5rem;
+    width: 100%;
+
+}
+
+.playlistcard button {
+    margin: 0rem;
+    all: unset;
+    padding: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: green;
+    right: 1.5rem;
+    bottom: 4rem;
+    /* Initial position */
+    opacity: 0;
+    /* Start hidden */
+    transition: all 0.7s ease;
+    /* Smooth transition */
+
+}
+
+.playlistcard button img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.playlistcard button :hover {
+    background-color: rgb(94, 185, 94);
+    border-radius: 50%;
+}
+
+
+.playlistcard p {
+    width: 100%;
+    margin: 0rem;
+    margin-top: 0.4rem;
+    color: #b3b3b3;
 }
