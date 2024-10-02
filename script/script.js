@@ -48,28 +48,61 @@ async function main() {
         
                         </li>`;
     }
-    //playAudio(songs);
     const liElements = document.querySelector(".songList ol").getElementsByTagName("li");
+    const playbarbutton = document.querySelector(".playbarbuttons div").children[1];
+    let currentselectedlist = null; // Variable to track the currently selected list item
 
+    // Playbar button click handler
+    playbarbutton.addEventListener("click", () => {
+        if(!currentsong.src){
+            
+        }
+        else if (currentsong.paused) {
+            currentsong.play();
+            playbarbutton.src = "images/buttons/pause.svg";
+            if (currentselectedlist) {
+                currentselectedlist.src = "images/buttons/pause.svg"
+
+            }
+
+        } else {
+            currentsong.pause();
+            playbarbutton.src = "images/buttons/play.svg";
+            if (currentselectedlist) {
+                currentselectedlist.src = "images/buttons/play.svg"
+
+            }
+
+
+        }
+    });
     Array.from(liElements).forEach(li => {
 
         li.addEventListener("click", element => {
-            const songName = li.querySelector(".songListli span").textContent.trim();
-            if (currentsong.paused ) {
-                currentsong.pause()
+            var songName = li.querySelector(".songListli span").textContent.trim();
+            if (!currentsong.src) {
+                currentselectedlist = li.querySelector(".songListli div img")
+                currentselectedlist.src = "images/buttons/pause.svg"
+                let playbarbutton = document.querySelector(".playbarbuttons div ").children[1];
+                playbarbutton.src = "images/buttons/pause.svg"
                 playAudio(songName)
-                console.log(element)
-                li.querySelector(".songListli div img").src="images/buttons/pause.svg"
-                let playbarbutton=document.querySelector(".playbarbuttons div ").children[1];
-                playbarbutton.src="images/buttons/pause.svg"
-            
             }
-            
+            else if (currentsong.paused ) {
+                currentsong.play()
+                //console.log(element)
+                currentselectedlist = li.querySelector(".songListli div img")
+                currentselectedlist.src = "images/buttons/pause.svg"
+                let playbarbutton = document.querySelector(".playbarbuttons div ").children[1];
+                playbarbutton.src = "images/buttons/pause.svg"
+
+            }
+
             else {
                 currentsong.pause()
-                li.querySelector(".songListli div img").src="images/buttons/play.svg"
-                let playbarbutton=document.querySelector(".playbarbuttons div ").children[1];
-                playbarbutton.src="images/buttons/play.svg"
+                currentselectedlist = li.querySelector(".songListli div img")
+                currentselectedlist.src = "images/buttons/play.svg"
+                let playbarbutton = document.querySelector(".playbarbuttons div ").children[1];
+                playbarbutton.src = "images/buttons/play.svg"
             }
 
             Array.from(liElements).forEach(otherLi => {
@@ -93,6 +126,6 @@ function playAudio(song) {
     });
 
 }
-  
+
 
 
