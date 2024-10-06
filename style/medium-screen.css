@@ -1,0 +1,74 @@
+.left {
+    background: black;
+    position: absolute;
+    z-index: 2;
+    height: calc(100vh - 9.8rem);
+    left: -100%;
+    transition: left 0.5s ease;
+    margin-left: 1rem;
+    padding-left: 0.6rem;
+
+}
+
+.right {
+    padding: 0rem 2rem 0rem;
+    height: calc(100vh - 15rem);
+}
+
+.playlistcard {
+    width: 8.5rem;
+}
+
+.playbarbuttons {
+    bottom: 5.5rem;
+    left: 1rem;
+    width: calc(100vw - 2.5rem);
+    box-sizing: border-box;
+    height: 7.5rem;
+    justify-content: center;
+    z-index: 1;
+
+}
+
+.playbarbuttons>div:first-child {
+
+    height: 6rem;
+    flex-direction: column;
+}
+
+.info {
+    width: 95%;
+    text-align: center;
+}
+
+.duration {
+    width: 95%;
+}
+
+.duration div {
+    width: max-content;
+}
+
+.playbarbuttons .seekbar {
+
+    width: 90%;
+}
+
+.humburger {
+    padding: 0.2rem;
+    box-sizing: border-box;
+}
+
+.humburger img {
+    display: block;
+    top: 4rem;
+    z-index: 2;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    filter: invert(1);
+}
+.humburger :hover{
+    scale: 0.01rem;
+
+}

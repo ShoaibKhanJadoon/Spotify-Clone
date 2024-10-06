@@ -41,7 +41,7 @@ input[type="search"]:focus {
 
 .left {
     height: calc(100vh - 10rem);
-    width: 25vw;
+    width: 18.63rem;
     margin-left: 1.5rem;
     display: flex;
     align-items: center;
@@ -49,14 +49,12 @@ input[type="search"]:focus {
     overflow-y: scroll;
     flex-direction: column;
     
+    
 }
 
 .right {
-    height: calc(100vh - 10rem);
-
-    width: 75vw;
     margin: 0.2rem 0.2rem 0.2rem 0.2rem;
-   
+    flex: 1;
     overflow-y: scroll;
 
 }
@@ -291,11 +289,13 @@ header {
 
 .spotifyPlaylist {
     background-color: black;
+    
 }
 
 .spotifyPlaylistContainer {
     display: flex;
     flex-wrap: wrap;
+    height: calc(100vh - 19rem);
 }
 
 .playlistcard {
@@ -354,4 +354,207 @@ header {
     margin: 0rem;
     margin-top: 0.4rem;
     color: #b3b3b3;
+}
+/* ending part */
+
+.fredoka-custom {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    /* Use any weight between 300 to 700 */
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.playbarbuttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: calc(100vw - 22rem);
+    height: 4rem;
+    background-color: rgb(77, 78, 77);
+    border-radius: 2rem;
+    position:fixed;
+    z-index: 5;
+}
+
+.playbarbuttons>div:first-child {
+    height: 2rem;
+
+}
+
+.playbarbuttons>div:first-child img {
+    box-sizing: border-box;
+    height: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 2rem;
+
+}
+
+.playbarbuttons .seekbar {
+    width: 97%;
+    cursor: pointer;
+    height: 0.5rem;
+    border-radius: 1rem;
+    background-color: black;
+
+}
+
+.playbarbuttons .seekbar .circle {
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(238, 237, 237);
+    border-radius: 50%;
+    position: relative;
+    bottom: 4px;
+    transition: left 0.5s;
+    cursor: pointer;
+}
+
+.songList {
+    max-width: 18rem;
+    box-sizing: border-box;
+    max-width: 18rem;
+    box-sizing: border-box;
+    padding: 0rem 1rem 0rem 1rem;
+
+}
+
+.songList ol {
+    padding-left: 1rem;
+
+
+}
+
+.songList ol li {
+
+    border: 2px solid rgb(255, 255, 255);
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    margin: 0.4rem;
+    cursor: pointer;
+
+
+}
+
+.songListli {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    border-radius: 50%;
+
+}
+
+.songListli span {
+    max-width: 10.25rem;
+}
+
+.songListli div {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    padding: 0.4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.main {
+    flex-direction: column;
+
+}
+
+.leftmain {
+    width: 17.25rem;
+    height: 100%;
+}
+
+
+
+
+.playbarbuttons>div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 96%;
+}
+
+.playbarbuttonsimages {
+    width: 8rem;
+}
+
+.info {
+    width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.duration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 40%;
+
+}
+
+.duration div {
+    width: 100%;
+}
+
+.duration div:nth-child(2) {
+    text-align: start;
+}
+
+.duration div:nth-child(1) {
+    text-align: end;
+}
+
+
+.volume {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 8rem;
+}
+
+.volume img {
+    width: 2rem;
+}
+
+.range input {
+    margin: 0rem;
+    min-width: 2rem;
+    width: 6rem;
+    border-radius: 5px;
+    -webkit-appearance: none;
+}
+
+.range input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /* Make the thumb a circle */
+    background: #030303;
+    /* Color of the thumb */
+    cursor: pointer;
+}
+.humburger img{
+    display: none;
 }
