@@ -2,7 +2,7 @@
 
 async function getSongs(folder) {
     try {
-        let response = await fetch(`/${folder}`);
+        let response = await fetch(`http://127.0.0.1:5500/${folder}`);
         if (!response.ok) {
             throw new Error(`html error ${response.status}`);
         }
@@ -26,7 +26,7 @@ async function getSongs(folder) {
 
 }
 async function displayAlbum(){
-    let response=await fetch("/songs");
+    let response=await fetch("http://127.0.0.1:5500/songs");
     if(!response.ok){
         throw new Error(`html error ${response.status}`);
     }
@@ -38,7 +38,7 @@ async function displayAlbum(){
         Array.from(anchors).forEach(async e=>{
             if(e.href.includes("songs/")){
                 let foldername=(e.href.split("songs/")[1])
-                let response=await fetch(`/songs/${foldername}/info.json`);
+                let response=await fetch(`http://127.0.0.1:5500/songs/${foldername}/info.json`);
                 if(!response.ok){
                     throw new Error(`html error ${response.status}`);
                 }
