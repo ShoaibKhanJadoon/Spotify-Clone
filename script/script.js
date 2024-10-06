@@ -2,7 +2,7 @@
 
 async function getSongs(folder) {
     try {
-        let response = await fetch(`https://spotify-clone-cyan-three.vercel.app/${folder}`);
+        let response = await fetch(`/${folder}`);
         if (!response.ok) {
             throw new Error(`html error ${response.status}`);
         }
@@ -26,7 +26,7 @@ async function getSongs(folder) {
 
 }
 async function displayAlbum(){
-    let response=await fetch("https://spotify-clone-cyan-three.vercel.app/songs");
+    let response=await fetch("/songs");
     if(!response.ok){
         throw new Error(`html error ${response.status}`);
     }
@@ -38,7 +38,7 @@ async function displayAlbum(){
         Array.from(anchors).forEach(async e=>{
             if(e.href.includes("songs/")){
                 let foldername=(e.href.split("songs/")[1])
-                let response=await fetch(`https://spotify-clone-cyan-three.vercel.app/songs/${foldername}/info.json`);
+                let response=await fetch(`/songs/${foldername}/info.json`);
                 if(!response.ok){
                     throw new Error(`html error ${response.status}`);
                 }
